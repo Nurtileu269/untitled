@@ -1,13 +1,24 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+public class Main {
+  public static void main(String[] args) {
+    Sport football = new Sport(1, "Football", "Team", 11, false);
+    Sport boxing   = new Sport(2, "Boxing", "Individual", 1, true);
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
+    Player p1 = new Player(1, "Ali", 19, football);
+    Player p2 = new Player(2, "Dana", 20, boxing);
+    SportsClub club = new SportsClub("Astana Club", "Astana");
+    club.addSport(football);
+    club.addSport(boxing);
+
+    club.addPlayer(p1);
+    club.addPlayer(p2);
+    System.out.println("=== CLUB INFO ===");
+    System.out.println(club);
+    System.out.println("\n=== PLAYERS ===");
+    System.out.println(p1);
+    System.out.println(p2);
+
+    Sport football2 = new Sport(1, "Football", "Team", 11, false);
+    System.out.println("\n=== COMPARISON ===");
+    System.out.println("football equals football2? " + football.equals(football2));
   }
 }
