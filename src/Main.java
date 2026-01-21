@@ -12,7 +12,9 @@ public class Main {
       System.out.println("2. Add Coach");
       System.out.println("3. View Members");
       System.out.println("4. Search Member by ID");
-      System.out.println("5. Sort Members by Name");
+      System.out.println("5. View Members (from DB)");
+      System.out.println("6. Update Member Name (DB)");
+      System.out.println("7. Delete Member by ID (DB)");
       System.out.println("0. Exit");
       System.out.print("Choose: ");
 
@@ -57,7 +59,29 @@ public class Main {
           System.out.println(club.findMemberById(id));
         }
 
-        case 5 -> club.sortMembersByName().forEach(System.out::println);
+        case 5 -> club.getMembers().forEach(System.out::println);
+
+        case 6 -> {
+          System.out.print("Enter ID: ");
+          int id = scanner.nextInt();
+          scanner.nextLine();
+
+          System.out.print("New name: ");
+          String newName = scanner.nextLine();
+
+          boolean ok = club.updateName(id, newName);
+          System.out.println(ok ? "Updated!" : "Not found / not updated");
+        }
+
+        case 7 -> {
+          System.out.print("Enter ID: ");
+          int id = scanner.nextInt();
+          scanner.nextLine();
+
+          boolean ok = club.deleteById(id);
+          System.out.println(ok ? "Deleted!" : "Not found / not deleted");
+        }
+
 
         case 0 -> {
           System.out.println("Bye!");

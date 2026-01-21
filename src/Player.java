@@ -6,6 +6,10 @@ public class Player extends Person {
         this.age = age;
     }
 
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public String getRole() {
         return "Player";
@@ -16,3 +20,4 @@ public class Player extends Person {
         return super.toString() + ", age=" + age + "}";
     }
 }
+

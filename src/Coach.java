@@ -6,6 +6,10 @@ public class Coach extends Person {
         this.experienceYears = experienceYears;
     }
 
+    public int getExperienceYears() {
+        return experienceYears;
+    }
+
     @Override
     public String getRole() {
         return "Coach";
@@ -16,3 +20,5 @@ public class Coach extends Person {
         return super.toString() + ", experienceYears=" + experienceYears + "}";
     }
 }
+
+
